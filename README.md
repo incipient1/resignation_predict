@@ -298,7 +298,7 @@ print('最佳近邻数量：{}，准确率{}'.format(best_num,best_score))
 ```
 
     最佳近邻数量：7，准确率0.8218194027299587
-    
+
 
 
 ```python
@@ -323,7 +323,7 @@ print('最佳深度：{}，准确率{}'.format(best_deep,best_score))
 ```
 
     最佳深度：19，准确率0.8482165108595405
-    
+
 
 
 ```python
@@ -355,7 +355,7 @@ score_sgdc
 
     E:\miniconda\envs\course_py35\lib\site-packages\sklearn\linear_model\stochastic_gradient.py:84: FutureWarning: max_iter and tol parameters have been added in <class 'sklearn.linear_model.stochastic_gradient.SGDClassifier'> in 0.19. If both are left unset, they default to max_iter=5 and tol=None. If tol is not None, max_iter defaults to max_iter=1000. From 0.21, default max_iter will be 1000, and default tol will be 1e-3.
       "and default tol will be 1e-3." % type(self), FutureWarning)
-    
+
 
 
 
@@ -374,7 +374,7 @@ score_pct
 
     E:\miniconda\envs\course_py35\lib\site-packages\sklearn\linear_model\stochastic_gradient.py:84: FutureWarning: max_iter and tol parameters have been added in <class 'sklearn.linear_model.perceptron.Perceptron'> in 0.19. If both are left unset, they default to max_iter=5 and tol=None. If tol is not None, max_iter defaults to max_iter=1000. From 0.21, default max_iter will be 1000, and default tol will be 1e-3.
       "and default tol will be 1e-3." % type(self), FutureWarning)
-    
+
 
 
 
@@ -421,7 +421,7 @@ model_df = pd.DataFrame(np.zeros((len(models),2)),columns=['model','score'])
 for i in range(len(models)):
     model_df.loc[i,'model'] = str(models[i]).split('(')[0]
     model_df.loc[i,'score'] = cross_val_score(models[i],x,y,cv=5,
-                                              scoring='accuracy').mean() 
+                                              scoring='accuracy').mean()
 
 model_df.sort_values(by='score',ascending=False)
 ```
@@ -531,7 +531,7 @@ pd.DataFrame(pfm_predict).to_csv('E:\\MySQL_data\\DataCastle\\pfm_predict.csv',
 ```
 
 第1次提交到DC后得分：0.87428，排名142<br>
-![第1次提交](E:/git/signation_predict_Data_Castal/score_1_dc.png)
+![第1次提交](https://github.com/incipient1/resignation_predict/blob/master/img/score_1_dc.PNG)
 
 ## 标签化9列
 
@@ -564,7 +564,7 @@ resignation['business_travel'] = resignation['BusinessTravel']
 ```python
 resignation.loc[resignation['business_travel'] == 'Non-Travel','business_travel'] = 0
 resignation.loc[resignation['business_travel'] == 'Travel_Rarely','business_travel'] = 1
-resignation.loc[resignation['business_travel'] == 'Travel_Frequently','business_travel'] = 2  
+resignation.loc[resignation['business_travel'] == 'Travel_Frequently','business_travel'] = 2
 ```
 
 
@@ -732,7 +732,7 @@ model_df = pd.DataFrame(np.zeros((len(models),2)),columns=['model','score'])
 for i in range(len(models)):
     model_df.loc[i,'model'] = str(models[i]).split('(')[0]
     model_df.loc[i,'score'] = cross_val_score(models[i],x_wrap,y,cv=5,
-                                              scoring='accuracy').mean() 
+                                              scoring='accuracy').mean()
 
 model_df.sort_values(by='score',ascending=False)
 ```
@@ -823,12 +823,12 @@ model_df.sort_values(by='score',ascending=False)
 
 ```python
 resignation_test['business_travel'] = resignation_test['BusinessTravel']
-resignation_test.loc[resignation_test['business_travel'] == 
+resignation_test.loc[resignation_test['business_travel'] ==
                      'Non-Travel','business_travel'] = 0
-resignation_test.loc[resignation_test['business_travel'] == 
+resignation_test.loc[resignation_test['business_travel'] ==
                      'Travel_Rarely','business_travel'] = 1
-resignation_test.loc[resignation_test['business_travel'] == 
-                     'Travel_Frequently','business_travel'] = 2  
+resignation_test.loc[resignation_test['business_travel'] ==
+                     'Travel_Frequently','business_travel'] = 2
 ```
 
 
@@ -884,4 +884,4 @@ pd.DataFrame(y_test_wrap).to_csv('E:\\MySQL_data\\DataCastle\\pfm_predict_wrap.c
 ```
 
 第2次提交后得分：0.88857，提高了0.01分；排名：85，提高了57<br>
-![第2次得分](E:\\git\\signation_predict_Data_Castal\\score_2_dc.png)
+![第2次得分](https://github.com/incipient1/resignation_predict/blob/master/img/score_2_dc.PNG)
