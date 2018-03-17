@@ -27,223 +27,14 @@ resignation.describe().columns
 ```
 
 
-
-
-    Index(['Age', 'Attrition', 'DistanceFromHome', 'Education', 'EmployeeNumber',
-           'EnvironmentSatisfaction', 'JobInvolvement', 'JobLevel',
-           'JobSatisfaction', 'MonthlyIncome', 'NumCompaniesWorked',
-           'PercentSalaryHike', 'PerformanceRating', 'RelationshipSatisfaction',
-           'StandardHours', 'StockOptionLevel', 'TotalWorkingYears',
-           'TrainingTimesLastYear', 'WorkLifeBalance', 'YearsAtCompany',
-           'YearsInCurrentRole', 'YearsSinceLastPromotion', 'YearsWithCurrManager',
-           'department', 'education_field'],
-          dtype='object')
-
-
-
-
 ```python
 resignation.columns
-```
-
-
-
-
-    Index(['Age', 'Attrition', 'BusinessTravel', 'Department', 'DistanceFromHome',
-           'Education', 'EducationField', 'EmployeeNumber',
-           'EnvironmentSatisfaction', 'Gender', 'JobInvolvement', 'JobLevel',
-           'JobRole', 'JobSatisfaction', 'MaritalStatus', 'MonthlyIncome',
-           'NumCompaniesWorked', 'Over18', 'OverTime', 'PercentSalaryHike',
-           'PerformanceRating', 'RelationshipSatisfaction', 'StandardHours',
-           'StockOptionLevel', 'TotalWorkingYears', 'TrainingTimesLastYear',
-           'WorkLifeBalance', 'YearsAtCompany', 'YearsInCurrentRole',
-           'YearsSinceLastPromotion', 'YearsWithCurrManager', 'business_travel',
-           'department', 'education_field', 'gender'],
-          dtype='object')
-
-
-
-
-```python
-最多有9个feature需要标签化
 ```
 
 
 ```python
 resignation.sample(5)
 ```
-
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Age</th>
-      <th>Attrition</th>
-      <th>BusinessTravel</th>
-      <th>Department</th>
-      <th>DistanceFromHome</th>
-      <th>Education</th>
-      <th>EducationField</th>
-      <th>EmployeeNumber</th>
-      <th>EnvironmentSatisfaction</th>
-      <th>Gender</th>
-      <th>...</th>
-      <th>RelationshipSatisfaction</th>
-      <th>StandardHours</th>
-      <th>StockOptionLevel</th>
-      <th>TotalWorkingYears</th>
-      <th>TrainingTimesLastYear</th>
-      <th>WorkLifeBalance</th>
-      <th>YearsAtCompany</th>
-      <th>YearsInCurrentRole</th>
-      <th>YearsSinceLastPromotion</th>
-      <th>YearsWithCurrManager</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>410</th>
-      <td>47</td>
-      <td>0</td>
-      <td>Travel_Rarely</td>
-      <td>Research &amp; Development</td>
-      <td>25</td>
-      <td>3</td>
-      <td>Medical</td>
-      <td>1993</td>
-      <td>1</td>
-      <td>Male</td>
-      <td>...</td>
-      <td>2</td>
-      <td>80</td>
-      <td>0</td>
-      <td>25</td>
-      <td>3</td>
-      <td>3</td>
-      <td>17</td>
-      <td>14</td>
-      <td>12</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>537</th>
-      <td>53</td>
-      <td>0</td>
-      <td>Travel_Rarely</td>
-      <td>Sales</td>
-      <td>2</td>
-      <td>2</td>
-      <td>Medical</td>
-      <td>981</td>
-      <td>3</td>
-      <td>Male</td>
-      <td>...</td>
-      <td>3</td>
-      <td>80</td>
-      <td>1</td>
-      <td>22</td>
-      <td>3</td>
-      <td>4</td>
-      <td>17</td>
-      <td>13</td>
-      <td>15</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>252</th>
-      <td>34</td>
-      <td>0</td>
-      <td>Travel_Rarely</td>
-      <td>Sales</td>
-      <td>1</td>
-      <td>4</td>
-      <td>Marketing</td>
-      <td>1047</td>
-      <td>2</td>
-      <td>Male</td>
-      <td>...</td>
-      <td>4</td>
-      <td>80</td>
-      <td>1</td>
-      <td>16</td>
-      <td>2</td>
-      <td>2</td>
-      <td>15</td>
-      <td>1</td>
-      <td>0</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>445</th>
-      <td>36</td>
-      <td>0</td>
-      <td>Travel_Rarely</td>
-      <td>Research &amp; Development</td>
-      <td>9</td>
-      <td>2</td>
-      <td>Medical</td>
-      <td>699</td>
-      <td>2</td>
-      <td>Male</td>
-      <td>...</td>
-      <td>3</td>
-      <td>80</td>
-      <td>1</td>
-      <td>13</td>
-      <td>2</td>
-      <td>3</td>
-      <td>3</td>
-      <td>2</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1023</th>
-      <td>43</td>
-      <td>0</td>
-      <td>Travel_Frequently</td>
-      <td>Research &amp; Development</td>
-      <td>10</td>
-      <td>4</td>
-      <td>Life Sciences</td>
-      <td>430</td>
-      <td>3</td>
-      <td>Female</td>
-      <td>...</td>
-      <td>1</td>
-      <td>80</td>
-      <td>0</td>
-      <td>9</td>
-      <td>5</td>
-      <td>3</td>
-      <td>8</td>
-      <td>7</td>
-      <td>1</td>
-      <td>7</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 31 columns</p>
-</div>
-
-
 
 ## 使用已有标签
 
@@ -260,6 +51,8 @@ features = ['Age','DistanceFromHome','Education','EmployeeNumber',
 x = resignation[features]
 y = resignation['Attrition']
 ```
+
+这里的features是resignation.describe().columns
 
 
 ```python
@@ -298,7 +91,7 @@ print('最佳近邻数量：{}，准确率{}'.format(best_num,best_score))
 ```
 
     最佳近邻数量：7，准确率0.8218194027299587
-
+    
 
 
 ```python
@@ -323,7 +116,7 @@ print('最佳深度：{}，准确率{}'.format(best_deep,best_score))
 ```
 
     最佳深度：19，准确率0.8482165108595405
-
+    
 
 
 ```python
@@ -353,17 +146,6 @@ score_sgdc = cross_val_score(sgdc,x,y,cv=5,scoring='accuracy').mean()
 score_sgdc
 ```
 
-    E:\miniconda\envs\course_py35\lib\site-packages\sklearn\linear_model\stochastic_gradient.py:84: FutureWarning: max_iter and tol parameters have been added in <class 'sklearn.linear_model.stochastic_gradient.SGDClassifier'> in 0.19. If both are left unset, they default to max_iter=5 and tol=None. If tol is not None, max_iter defaults to max_iter=1000. From 0.21, default max_iter will be 1000, and default tol will be 1e-3.
-      "and default tol will be 1e-3." % type(self), FutureWarning)
-
-
-
-
-
-    0.8381874155927338
-
-
-
 
 ```python
 from sklearn.linear_model.perceptron import Perceptron
@@ -371,17 +153,6 @@ pct = Perceptron()
 score_pct = cross_val_score(pct,x,y,cv=5,scoring='accuracy').mean()
 score_pct
 ```
-
-    E:\miniconda\envs\course_py35\lib\site-packages\sklearn\linear_model\stochastic_gradient.py:84: FutureWarning: max_iter and tol parameters have been added in <class 'sklearn.linear_model.perceptron.Perceptron'> in 0.19. If both are left unset, they default to max_iter=5 and tol=None. If tol is not None, max_iter defaults to max_iter=1000. From 0.21, default max_iter will be 1000, and default tol will be 1e-3.
-      "and default tol will be 1e-3." % type(self), FutureWarning)
-
-
-
-
-
-    0.82274494777315077
-
-
 
 
 ```python
@@ -421,7 +192,7 @@ model_df = pd.DataFrame(np.zeros((len(models),2)),columns=['model','score'])
 for i in range(len(models)):
     model_df.loc[i,'model'] = str(models[i]).split('(')[0]
     model_df.loc[i,'score'] = cross_val_score(models[i],x,y,cv=5,
-                                              scoring='accuracy').mean()
+                                              scoring='accuracy').mean() 
 
 model_df.sort_values(by='score',ascending=False)
 ```
@@ -564,7 +335,7 @@ resignation['business_travel'] = resignation['BusinessTravel']
 ```python
 resignation.loc[resignation['business_travel'] == 'Non-Travel','business_travel'] = 0
 resignation.loc[resignation['business_travel'] == 'Travel_Rarely','business_travel'] = 1
-resignation.loc[resignation['business_travel'] == 'Travel_Frequently','business_travel'] = 2
+resignation.loc[resignation['business_travel'] == 'Travel_Frequently','business_travel'] = 2  
 ```
 
 
@@ -732,7 +503,7 @@ model_df = pd.DataFrame(np.zeros((len(models),2)),columns=['model','score'])
 for i in range(len(models)):
     model_df.loc[i,'model'] = str(models[i]).split('(')[0]
     model_df.loc[i,'score'] = cross_val_score(models[i],x_wrap,y,cv=5,
-                                              scoring='accuracy').mean()
+                                              scoring='accuracy').mean() 
 
 model_df.sort_values(by='score',ascending=False)
 ```
@@ -822,44 +593,207 @@ model_df.sort_values(by='score',ascending=False)
 
 
 ```python
-resignation_test['business_travel'] = resignation_test['BusinessTravel']
-resignation_test.loc[resignation_test['business_travel'] ==
-                     'Non-Travel','business_travel'] = 0
-resignation_test.loc[resignation_test['business_travel'] ==
-                     'Travel_Rarely','business_travel'] = 1
-resignation_test.loc[resignation_test['business_travel'] ==
-                     'Travel_Frequently','business_travel'] = 2
+columns_old = ['Department','EducationField','JobRole','MaritalStatus',
+               'OverTime']
+
+columns_new = ['department','education_field','job_role','marital_status',
+               'over_time']
+
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+for i in range(len(columns_old)):
+    resignation_test[columns_new[i]] = resignation_test[columns_old[i]]
+    le.fit(resignation_test[columns_new[i]])
+    resignation_test[columns_new[i]] = le.transform(
+        resignation_test[columns_old[i]])
+
 ```
 
 
-```python
-resignation_test['department'] = resignation_test['Department']
-from sklearn.preprocessing import LabelEncoder
-le = LabelEncoder()
-le.fit(resignation_test['department'])
-resignation_test['department'] = le.transform(resignation_test['department'])
 
-resignation_test['education_field'] = resignation_test['EducationField']
-le.fit(resignation_test['education_field'])
-resignation_test['education_field'] = le.transform(
-    resignation_test['education_field'])
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>BusinessTravel</th>
+      <th>Department</th>
+      <th>DistanceFromHome</th>
+      <th>Education</th>
+      <th>EducationField</th>
+      <th>EmployeeNumber</th>
+      <th>EnvironmentSatisfaction</th>
+      <th>Gender</th>
+      <th>JobInvolvement</th>
+      <th>...</th>
+      <th>WorkLifeBalance</th>
+      <th>YearsAtCompany</th>
+      <th>YearsInCurrentRole</th>
+      <th>YearsSinceLastPromotion</th>
+      <th>YearsWithCurrManager</th>
+      <th>department</th>
+      <th>education_field</th>
+      <th>job_role</th>
+      <th>marital_status</th>
+      <th>over_time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>129</th>
+      <td>52</td>
+      <td>Travel_Rarely</td>
+      <td>Sales</td>
+      <td>5</td>
+      <td>3</td>
+      <td>Life Sciences</td>
+      <td>1319</td>
+      <td>2</td>
+      <td>Male</td>
+      <td>3</td>
+      <td>...</td>
+      <td>2</td>
+      <td>8</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>2</td>
+      <td>1</td>
+      <td>7</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>59</td>
+      <td>Travel_Rarely</td>
+      <td>Sales</td>
+      <td>3</td>
+      <td>3</td>
+      <td>Life Sciences</td>
+      <td>1254</td>
+      <td>3</td>
+      <td>Female</td>
+      <td>2</td>
+      <td>...</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>1</td>
+      <td>7</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>31</td>
+      <td>Travel_Rarely</td>
+      <td>Research &amp; Development</td>
+      <td>7</td>
+      <td>4</td>
+      <td>Life Sciences</td>
+      <td>76</td>
+      <td>4</td>
+      <td>Male</td>
+      <td>3</td>
+      <td>...</td>
+      <td>2</td>
+      <td>7</td>
+      <td>7</td>
+      <td>1</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>345</th>
+      <td>24</td>
+      <td>Travel_Rarely</td>
+      <td>Sales</td>
+      <td>10</td>
+      <td>4</td>
+      <td>Marketing</td>
+      <td>507</td>
+      <td>4</td>
+      <td>Female</td>
+      <td>3</td>
+      <td>...</td>
+      <td>4</td>
+      <td>5</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>7</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>31</td>
+      <td>Non-Travel</td>
+      <td>Research &amp; Development</td>
+      <td>3</td>
+      <td>2</td>
+      <td>Medical</td>
+      <td>1948</td>
+      <td>3</td>
+      <td>Male</td>
+      <td>3</td>
+      <td>...</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 35 columns</p>
+</div>
+
+
+
+
+```python
+resignation_test['business_travel'] = resignation_test['BusinessTravel']
+resignation_test.loc[resignation_test['business_travel'] == 
+                     'Non-Travel','business_travel'] = 0
+resignation_test.loc[resignation_test['business_travel'] == 
+                     'Travel_Rarely','business_travel'] = 1
+resignation_test.loc[resignation_test['business_travel'] == 
+                     'Travel_Frequently','business_travel'] = 2  
 
 resignation_test['gender'] = resignation_test['Gender']
 resignation_test.loc[resignation_test['gender'] == 'Female','gender'] = 0
 resignation_test.loc[resignation_test['gender'] == 'Male','gender'] = 1
-
-resignation_test['job_role'] = resignation_test['JobRole']
-le.fit(resignation_test['job_role'])
-resignation_test['job_role'] = le.transform(resignation_test['job_role'])
-
-resignation_test['marital_status'] = resignation_test['MaritalStatus']
-le.fit(resignation_test['marital_status'])
-resignation_test['marital_status'] = le.transform(
-    resignation_test['marital_status'])
-
-resignation_test['over_time'] = resignation_test['OverTime']
-le.fit(resignation_test['over_time'])
-resignation_test['over_time'] = le.transform(resignation_test['over_time'])
 ```
 
 ### 预测
