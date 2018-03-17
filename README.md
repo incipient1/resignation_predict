@@ -303,6 +303,7 @@ pd.DataFrame(pfm_predict).to_csv('E:\\MySQL_data\\DataCastle\\pfm_predict.csv',
 
 第1次提交到DC后得分：0.87428，排名142<br>
 ![第1次提交](https://github.com/incipient1/resignation_predict/blob/master/img/score_1_dc.PNG)
+下载数据前需要补充个人信息，提交数据前需要验证身份证，哎……和kaggle比差太远！
 
 ## 标签化9列
 
